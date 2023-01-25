@@ -11,4 +11,4 @@ public class SpringBootRestApiCustomerApplication {
 	}
 
 }
-// entity, repository extends JpaRepository<Customer,Long>.  servis controller
+// entity, repository extends JpaRepository<Customer,Long>. Servis controller

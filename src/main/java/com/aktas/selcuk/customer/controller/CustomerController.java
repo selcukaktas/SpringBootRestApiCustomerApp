@@ -2,6 +2,7 @@ package com.aktas.selcuk.customer.controller;
 
 import com.aktas.selcuk.customer.entity.Customer;
 import com.aktas.selcuk.customer.service.CustomerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping("/save")
-    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<Customer> addCustomer(@Valid @RequestBody Customer customer) {
         Customer adedCustomer = customerService.addCustomer(customer);
         return new ResponseEntity<Customer>(adedCustomer, HttpStatus.CREATED);
     }
